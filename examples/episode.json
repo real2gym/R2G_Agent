@@ -1,0 +1,26 @@
+{
+  "mode": "continuous_stage",
+  "output": "${R2G_RUN_ROOT}/controller",
+  "task": {
+    "suite": "droid",
+    "task_id": "${R2G_TASK_ID}",
+    "init_id": 0,
+    "seed": 0,
+    "language": "${R2G_TASK_LANGUAGE}"
+  },
+  "limits": {"max_rounds": 25, "max_steps": 4000},
+  "policy": {
+    "cli": "${R2G_MODEL_CLI}",
+    "model": "${R2G_MODEL}",
+    "effort": "medium",
+    "prompt_path": "${R2G_POLICY_PROMPT}",
+    "decision_unit": "stage",
+    "session_mode": "continuous",
+    "timeout_seconds": 360
+  },
+  "backend": {
+    "command": ["${R2G_SIM_PYTHON}", "-m", "${R2G_BACKEND_MODULE}", "${R2G_BACKEND_CONFIG}"],
+    "timeout_seconds": 360,
+    "artifacts": {"kind": "local", "path": "${R2G_RUN_ROOT}/backend"}
+  }
+}

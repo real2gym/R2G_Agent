@@ -1,0 +1,227 @@
+{
+  "primary_snapshot": "C0_serial_E03_E12_20260925",
+  "secondary_snapshot": "C0_serial_D09_E02_20260925",
+  "comparison": "All shared roboagent files identical between snapshots; primary additionally contains ego_backend/ego_profile.",
+  "files": [
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/__init__.py",
+      "source_sha256": "e5fbbe5f7e698a67710d2cf93523c3f289ab120fb884158348bb1abff92ea2a3",
+      "destination": "roboagent/__init__.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/__main__.py",
+      "source_sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "destination": "roboagent/__main__.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/cli.py",
+      "source_sha256": "7ac2554371b1b7bcd689f30eb101956e873b6e687e985befe5eeceb81724dcd3",
+      "destination": "roboagent/cli.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/runner.py",
+      "source_sha256": "6c2837931f0632b6d1ad5214d255584b3a47a12ff39840dee9c9962c4828c91a",
+      "destination": "roboagent/runner.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/continuous_policy.py",
+      "source_sha256": "75db19718301cbd013ee9f931c354282c352c961ad22e97fbe01fb4ff7ffea91",
+      "destination": "roboagent/continuous_policy.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/policy.py",
+      "source_sha256": "e27f115765d40ad6d9bac25c77baa54938669e8d406fa0f7cfb287223340fe6b",
+      "destination": "roboagent/policy.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/boundary.py",
+      "source_sha256": "ffbbf7528be4e8607a2baa6bfa7fc6da715a5eae3b31a4d17dbc4d566cdd4ab0",
+      "destination": "roboagent/boundary.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/io.py",
+      "source_sha256": "5424b3d670fbfdba75962a8dd341b91717383a76201318a8d072c4ea5084c8a5",
+      "destination": "roboagent/io.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/transport.py",
+      "source_sha256": "e0807d395ae759a753b32eaa9f8696a9ddbf10f97ff45aaf13646ab0d5573c13",
+      "destination": "roboagent/transport.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/index.html",
+      "source_sha256": "2a0788d17015c1a9e7cf6cc7f3c3a2d0c9f7348f5ae540fc7b5c60ef50b83d72",
+      "destination": "roboagent/resources/index.html"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/stage_decision.txt",
+      "source_sha256": "066bc2e843131be4d2cb14c1dff24d2828a0ad7b31341c391967af3af8193d8f",
+      "destination": "roboagent/resources/stage_decision.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/decision.schema.json",
+      "source_sha256": "3ca44eba5c1d021d0e48c2cc5a56478bb1f499f2876904eef3e66e75f64bf6bd",
+      "destination": "roboagent/resources/decision.schema.json"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/__init__.py",
+      "source_sha256": "93780221d4cbe3abb849ac31c4c1bb1d0b829081809d345fc0b2ed02020acbbf",
+      "destination": "roboagent/backends/__init__.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/ego_backend.py",
+      "source_sha256": "fe0658d86367c4115ff0d1559edebd2ae935b9323f71557164b8a3a83c127dbd",
+      "destination": "roboagent/backends/ego_backend.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/ego_profile.py",
+      "source_sha256": "53857d1d46a168182e3cf05032ec6318af9fb78d2ccc554be143868ab72e545d",
+      "destination": "roboagent/backends/ego_profile.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/batch_backend.py",
+      "source_sha256": "6d8e05fd61f97d7bce5d112c65431182235fc1861fd283f7a2fa5e5cef0a2aeb",
+      "destination": "roboagent/backends/batch_backend.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/batch_profile.py",
+      "source_sha256": "7b30427ccedbe8a56c27a4aaf59f31cc375b8bffa0dc28fedbcf72ff1db2c164",
+      "destination": "roboagent/backends/batch_profile.py"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/E03/policy.txt",
+      "source_sha256": "40089b565d3e68f779a373d7b000c672f1ce191beea12a7ca2e34108d710e871",
+      "destination": "roboagent/resources/ego_policy.txt"
+    },
+    {
+      "source": "C0_serial_D09_E02_20260925/D09/policy.txt",
+      "source_sha256": "ccee2f8cd6d040bf2a44fe0339ce22480d11ef6759d135afcd77bf5b6a148ca7",
+      "destination": "roboagent/resources/batch_policy.txt"
+    },
+    {
+      "source": "C0_serial_D09_E02_20260925/E01/policy.txt",
+      "source_sha256": "715b8ec9510173e364df8b2ab2f42bf91dadbc541b0d544fbd915df0f3758733",
+      "destination": "roboagent/resources/e01_policy.txt"
+    },
+    {
+      "source": "C0_serial_D09_E02_20260925/E02/policy.txt",
+      "source_sha256": "56bda1a0370c49a3f30e283d689b7b28706293459ae5be478d89e32ad3bcabde",
+      "destination": "roboagent/resources/e02_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid.py",
+      "source_sha256": "1c57b12302b514188c692f6fb208ae1bcef67eb446f2ef71024b5a13d56cb61d",
+      "destination": "roboagent/backends/droid.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid_profiles.py",
+      "source_sha256": "6ea40c15d3f22d119317da1d55fc66fb76209a9c8b3d4dfc5009e521a1d42151",
+      "destination": "roboagent/backends/droid_profiles.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid_evaluator.py",
+      "source_sha256": "a98b2bf462b5a6c6eb1d6466e15770ba47ea737b95917d5e32dd7e265b0925b3",
+      "destination": "roboagent/backends/droid_evaluator.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid_band.py",
+      "source_sha256": "f224178cd67ca25cb197570b0b58abd6db8f6cd157f44e03024a55ae9dbab983",
+      "destination": "roboagent/backends/droid_band.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid_drawer.py",
+      "source_sha256": "9d11c10f322af1f547bcfd5c1bc14ba4b776243e5013458c09b6ad5489beabc0",
+      "destination": "roboagent/backends/droid_drawer.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid_door.py",
+      "source_sha256": "229c9ab74eaffb96a113276f8b24feb7b1ef747e2f5420596dd3eab7729abf41",
+      "destination": "roboagent/backends/droid_door.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/backends/droid_kitchen.py",
+      "source_sha256": "e00ce80ce5870430e646855f06389ebd24f6c352a9a525573563e7b2ec674f07",
+      "destination": "roboagent/backends/droid_kitchen.py",
+      "matches_actual_launch_source": true
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_policy.txt",
+      "source_sha256": "715ad79367f7d6a6c513836e7837d13f0b152927c2ad34a0351be5ead32524a7",
+      "destination": "roboagent/resources/droid_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d02_policy.txt",
+      "source_sha256": "df721e99dadf29bbaefa5fc1e992c64767e025beeda1b0794f07e29effca1426",
+      "destination": "roboagent/resources/droid_d02_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d03_policy.txt",
+      "source_sha256": "ba978383a4fa3f9b9fd3a288c64294a4acc0bc496fd4a631ef038f3f6cf2b8c5",
+      "destination": "roboagent/resources/droid_d03_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d04_policy.txt",
+      "source_sha256": "2bfe0ce830304753111c8c05395b9039b83a5d57c0e6daf69efad30470747957",
+      "destination": "roboagent/resources/droid_d04_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d05_policy.txt",
+      "source_sha256": "9d3927273fe58838596a8eae16b2c6efbe37fc2d51ab5818aa02d6fe6ed6252b",
+      "destination": "roboagent/resources/droid_d05_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d06_policy.txt",
+      "source_sha256": "1a72e7591ae209ca119f11f247b408909325eb7760d6c05f873c8cc57c48b8be",
+      "destination": "roboagent/resources/droid_d06_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d07_policy.txt",
+      "source_sha256": "36180681d2cb0c54e337be2bbcf27b33d62f4c99f3ecd078ebb662b51e1f57f2",
+      "destination": "roboagent/resources/droid_d07_policy.txt"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/resources/droid_d08_policy.txt",
+      "source_sha256": "bd65732b7dd002f0cc0660df028cf1fce4d38971ec1e6a21546ab640f4dc3318",
+      "destination": "roboagent/resources/droid_d08_policy.txt"
+    }
+  ],
+  "derived_modules": {
+    "roboagent/command.py": "agp_runner.py:build_command only",
+    "roboagent/decision_mcp.py": "decision schema + agp_mcp.py:serve only",
+    "roboagent/perception.py": "HTTP/array adapters from ego_backend.py and batch_backend.py"
+  },
+  "extracted_function_sources": [
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/agp_runner.py",
+      "source_sha256": "dcec22307f152a4f3c368f12ac5ee797378ab10d83abfc1550d4dc090863d34c",
+      "scope": "command constructor / stdio transport only; autonomous execution branch excluded"
+    },
+    {
+      "source": "C0_serial_E03_E12_20260925/source/C0/roboagent/agp_mcp.py",
+      "source_sha256": "39348b2a7c5c268223b2d52703f9f25492460f47e3261847c466b90ec7855dd7",
+      "scope": "command constructor / stdio transport only; autonomous execution branch excluded"
+    }
+  ],
+  "reference_test_sources": [
+    {
+      "source": "R2G_Agent_C0/tests/test_continuous_policy.py",
+      "sha256": "602508e401558d5c1c2f46abf3416ad80c046b9b29d3a5081355916644e61ed7",
+      "use": "adapted continuous-session protocol test / mock fixture"
+    },
+    {
+      "source": "R2G_Agent_C0/tests/test_pipeline.py",
+      "sha256": "9593df70cb26c0b2b6bccd59ca98889068efd1e92e508a7d558172779a60c715",
+      "use": "adapted continuous-session protocol test / mock fixture"
+    }
+  ],
+  "D01_D08_extension": {
+    "verification": "All seven backend/profile sources match actual C0 launch source byte-for-byte before portability edits. Launch configurations inspected read-only; no results imported.",
+    "adaptation": "Distinct native backend retained; same stage-code controller and shared real perception client. D01 inline containment evaluator preserved, not removed as unreachable."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "${R2G_TASK_ID}",
+  "scene_dir": "${R2G_SCENE_DIR}",
+  "artifact_dir": "${R2G_RUN_ROOT}/backend",
+  "language": "${R2G_TASK_LANGUAGE}",
+  "max_steps": 4000,
+  "success_criteria_path": "${R2G_CRITERIA_PATH}",
+  "success_criteria_sha256": "${R2G_CRITERIA_SHA256}"
+}

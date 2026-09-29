@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "visual_observation": {
+      "type": "string"
+    },
+    "inference": {
+      "type": "string"
+    },
+    "uncertainty": {
+      "type": "string"
+    },
+    "failure_hypothesis": {
+      "type": "string"
+    },
+    "local_correction": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "expected_visual_effect": {
+      "type": "string"
+    },
+    "stop_reason": {
+      "type": "string"
+    },
+    "stop": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "visual_observation",
+    "inference",
+    "uncertainty",
+    "failure_hypothesis",
+    "local_correction",
+    "code",
+    "expected_visual_effect",
+    "stop_reason",
+    "stop"
+  ]
+}
