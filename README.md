@@ -51,8 +51,8 @@ The outer controller itself uses the Python standard library. The `sim` extra in
 | --- | --- |
 | Model CLI | An authenticated CLI compatible with the retained experimental command and JSON/MCP event protocol. The original run selected `gpt-6-astra`, medium effort; choose a model available to your account. |
 | CLI compatibility | The launcher retains `--ignore-user-config`, `--ignore-rules`, `--ephemeral`, read-only sandbox and feature-disable flags. Some distributions do not support them. This repository does not bundle the experimental CLI patches; inspect `roboagent/command.py` and verify support before launching. No automatic weaker fallback is used. |
-| Native scenes | A matching scene XML (`model.xml` for D02, otherwise `scene.xml`), referenced meshes/textures and task-specific initial-state files, including the exact robot/body/site naming expected by the adapter. |
-| Criteria | For D02–D12/E01–E12, a task-matched, externally prepared JSON criterion file and its SHA-256. D01 retains its original inline containment criterion. Evaluator thresholds must be fixed before execution. |
+| Native scenes | A prepared MuJoCo scene, referenced meshes/textures, robot configuration and initial-state files. |
+| Criteria | A task-matched evaluation configuration with thresholds fixed before execution. When using an external criterion file, provide its SHA-256 to keep acceptance criteria unchanged. |
 | Perception | Running SAM3 and GraspNet-compatible services with the [documented HTTP contracts](docs/perception.md). Checkpoint access, GPU runtime and any access credentials are operator-provided. |
 | Rendering | Working MuJoCo rendering, platform graphics drivers and a working FFmpeg encoder. Headless Linux commonly uses `MUJOCO_GL=egl`. |
 
@@ -69,29 +69,15 @@ python -m roboagent run examples/episode.json
 
 `preflight` validates and prints the expanded configuration only. It does not establish GPU, model authentication, model-service readiness or native task success. `run` requires a **fresh output directory**.
 
-All scenes use one public native-backend entry point:
+The usage flow is:
 
-```bash
-python -m roboagent.backends examples/backend.json
-```
+1. Prepare the MuJoCo environment, robot configuration and task instruction.
+2. Start the perception services and configure their endpoints.
+3. Fill in the episode and environment configurations, including the scene identifier, asset paths, policy prompt, evaluation criteria and a fresh output directory.
+4. Run `preflight`, then launch the episode with `run`. The controller starts the simulator through the unified `python -m roboagent.backends <config>` entry point automatically.
+5. Inspect the recorded decisions, execution feedback, videos and independent task evaluation.
 
-Normally the controller starts this command through `examples/episode.json`; do not start a second backend for the same output directory. The standalone command speaks the controller's newline-delimited JSON protocol on stdin/stdout; it is not an interactive policy run.
-
-Set **`scene_id`** in the backend configuration (the templates use `R2G_SCENE_ID`). The dispatcher chooses the adapter automatically; no backend-module environment variable is needed. Shared fields are `scene_id`, `scene_dir`, `artifact_dir`, `language` and `max_steps` (4,000). All scenes except D01 also require `success_criteria_path` and `success_criteria_sha256`. D01 uses `examples/backend-d01.json` because its original evaluator is inline.
-
-Select only the robot-appropriate policy prompt:
-
-| Scene | Prompt under `roboagent/resources/` |
-| --- | --- |
-| D01 | `droid_policy.txt` |
-| D02–D08 | `droid_d02_policy.txt` … `droid_d08_policy.txt` |
-| D09–D12 | `batch_policy.txt` |
-| E01 / E02 | `e01_policy.txt` / `e02_policy.txt` |
-| E03–E12 | `ego_policy.txt` |
-
-The internal adapters remain different because robot joint/TCP names, actuator layouts, wrist mounting, dual-arm control and native evaluation differ across the reconstructed scenes. These are implementation details behind the unified command, not different agent algorithms. All 24 scenes share the C0 stage loop and perception clients. [Per-scene contracts and routing](docs/scene-adapters.md) explain the retained differences.
-
-The controller/criterion wire format retains `task_id` and `suite="droid"` for compatibility; the episode template fills `task.task_id` from the same `R2G_SCENE_ID`. Backend input requires `scene_id`; a matching legacy `task_id` is allowed, but conflicting IDs or a missing `scene_id` fail before simulator startup. Relative backend paths resolve against the JSON file's directory.
+Keep the scene identifier consistent across the episode and environment configurations. Relative environment paths resolve against the configuration file's directory. See the [configuration guide](docs/setup.md) for field definitions and service setup.
 
 ## Outputs and boundaries
 
