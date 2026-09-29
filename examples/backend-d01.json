@@ -1,5 +1,5 @@
 {
-  "task_id": "D01",
+  "scene_id": "D01",
   "scene_dir": "${R2G_SCENE_DIR}",
   "artifact_dir": "${R2G_RUN_ROOT}/backend",
   "language": "${R2G_TASK_LANGUAGE}",

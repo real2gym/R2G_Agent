@@ -2,6 +2,8 @@
 
 D01–D08 were audited against each task's actual C0 episode/backend configuration, not inferred from filenames. Every launch uses `publish_frameworks_20260924/C0/roboagent/backends/droid.py`. That file and its six supporting modules match the September 25 C0 snapshot byte-for-byte before release portability edits. No experiment results, trajectories, assets or private launch paths were copied.
 
+The public entry is **`python -m roboagent.backends <config>`** for every scene. It routes from explicit `scene_id`: D01–D08 → internal `droid`; D09–D12/E01–E02 → internal `batch_backend`; E03–E12 → internal `ego_backend`. Users do not select these modules. The common loader maps `scene_id` to the historical profile `task_id` without changing evaluation semantics.
+
 All adapters share the continuous stage runner, decision format, persistent current-episode code namespace, 25/4000/600 budgets, real SAM3/GraspNet HTTP contracts, native motion and feedback transport. Differences are native scene contracts and evaluators; silently substituting `batch_backend` would lose behavior.
 
 | Task | Initialization and native scene differences | Evaluation retained | Prompt |

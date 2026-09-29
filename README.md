@@ -69,17 +69,29 @@ python -m roboagent run examples/episode.json
 
 `preflight` validates and prints the expanded configuration only. It does not establish GPU, model authentication, model-service readiness or native task success. `run` requires a **fresh output directory**.
 
-Choose the backend and matching prompt:
+All scenes use one public native-backend entry point:
 
-| Task family | Backend module | Prompt under `roboagent/resources/` |
-| --- | --- | --- |
-| D01–D08, task-specific Franka/Robotiq scenes | `roboagent.backends.droid` | `droid_policy.txt` (D01), `droid_d02_policy.txt` … `droid_d08_policy.txt` |
-| E03–E12, dual FR3/Franka Hand | `roboagent.backends.ego_backend` | `ego_policy.txt` |
-| D09–D12, Franka/Robotiq | `roboagent.backends.batch_backend` | `batch_policy.txt` |
-| E01 | `roboagent.backends.batch_backend` | `e01_policy.txt` |
-| E02 | `roboagent.backends.batch_backend` | `e02_policy.txt` |
+```bash
+python -m roboagent.backends examples/backend.json
+```
 
-These are adapters for the reconstructed experimental scenes, not arbitrary robot models. The historical wire protocol uses `suite="droid"` for both D and E scenes. D01–D12 and E01–E12 are covered by the retained scene adapters. [Per-scene contracts and source audit](docs/scene-adapters.md) explain the differences; unrelated agent branches are not included.
+Normally the controller starts this command through `examples/episode.json`; do not start a second backend for the same output directory. The standalone command speaks the controller's newline-delimited JSON protocol on stdin/stdout; it is not an interactive policy run.
+
+Set **`scene_id`** in the backend configuration (the templates use `R2G_SCENE_ID`). The dispatcher chooses the adapter automatically; no backend-module environment variable is needed. Shared fields are `scene_id`, `scene_dir`, `artifact_dir`, `language` and `max_steps` (4,000). All scenes except D01 also require `success_criteria_path` and `success_criteria_sha256`. D01 uses `examples/backend-d01.json` because its original evaluator is inline.
+
+Select only the robot-appropriate policy prompt:
+
+| Scene | Prompt under `roboagent/resources/` |
+| --- | --- |
+| D01 | `droid_policy.txt` |
+| D02–D08 | `droid_d02_policy.txt` … `droid_d08_policy.txt` |
+| D09–D12 | `batch_policy.txt` |
+| E01 / E02 | `e01_policy.txt` / `e02_policy.txt` |
+| E03–E12 | `ego_policy.txt` |
+
+The internal adapters remain different because robot joint/TCP names, actuator layouts, wrist mounting, dual-arm control and native evaluation differ across the reconstructed scenes. These are implementation details behind the unified command, not different agent algorithms. All 24 scenes share the C0 stage loop and perception clients. [Per-scene contracts and routing](docs/scene-adapters.md) explain the retained differences.
+
+The controller/criterion wire format retains `task_id` and `suite="droid"` for compatibility; the episode template fills `task.task_id` from the same `R2G_SCENE_ID`. Backend input requires `scene_id`; a matching legacy `task_id` is allowed, but conflicting IDs or a missing `scene_id` fail before simulator startup. Relative backend paths resolve against the JSON file's directory.
 
 ## Outputs and boundaries
 

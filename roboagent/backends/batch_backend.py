@@ -9,12 +9,12 @@ from scipy.optimize import least_squares
 import builtins
 from PIL import Image
 
-from roboagent.config import load_config
-CFG = load_config(sys.argv[1])
+from roboagent.backends.routing import load_backend_config
+CFG = BACKEND_CONFIG if "BACKEND_CONFIG" in globals() else load_backend_config(sys.argv[1])
 from roboagent.perception import PerceptionClient
 PERCEPTION = PerceptionClient()
 ROOT = pathlib.Path(CFG['scene_dir'])
-TASK_ID = CFG.get('task_id')
+TASK_ID = CFG['scene_id']
 if TASK_ID not in ('D09','D10','D11','D12','E01','E02'): raise ValueError('Unsupported DROID task')
 XML = ROOT / 'scene.xml'
 MODEL = mujoco.MjModel.from_xml_path(str(XML))

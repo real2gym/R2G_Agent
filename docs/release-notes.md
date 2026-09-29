@@ -35,3 +35,9 @@ The overview SVG is maintained separately by the project author. Its paper-level
 ## D01–D08 coverage correction
 
 Audited actual per-scene C0 launch configs and verified all seven native source modules against the launch location. Added the independent D01–D08 backend, all six initialization/evaluation modules and eight robot-specific prompts. Shared real perception clients and environment expansion match the other adapters. D02 wrist mounting, D05 elastic-band logic, D06–D08 articulated/contact checks and D01 inline evaluation remain intact. See `scene-adapters.md`. No result files were imported. New tests cover retained stage/perception integration and criterion tamper rejection. Rebuilt wheel includes all additions. Live scene execution remains untested in this publication task.
+
+## Unified public backend entry
+
+All 24 scenes now use `python -m roboagent.backends <config>`. The explicit `scene_id` routes to the retained native adapter. Common field validation, environment expansion and configuration-relative filesystem paths run before simulator startup. No default scene is guessed; conflicting legacy IDs fail. Examples use one `R2G_SCENE_ID` and no backend-module selector. The ready-message/profile `task_id` contract is preserved internally.
+
+Validation: 26 unit/contract tests passed, including all 24 routing choices, malformed/common configuration, D01 criterion exception, in-memory dispatch and the public help command; compileall and diff whitespace checks passed. All existing functions/classes in the three adapters are AST-identical to the published baseline; only configuration loading and ID selection changed. Assets and physical task logic are unchanged. No live simulator run, commit or push was performed for this change.

@@ -3,7 +3,7 @@
   "output": "${R2G_RUN_ROOT}/controller",
   "task": {
     "suite": "droid",
-    "task_id": "${R2G_TASK_ID}",
+    "task_id": "${R2G_SCENE_ID}",
     "init_id": 0,
     "seed": 0,
     "language": "${R2G_TASK_LANGUAGE}"
@@ -19,7 +19,7 @@
     "timeout_seconds": 360
   },
   "backend": {
-    "command": ["${R2G_SIM_PYTHON}", "-m", "${R2G_BACKEND_MODULE}", "${R2G_BACKEND_CONFIG}"],
+    "command": ["${R2G_SIM_PYTHON}", "-m", "roboagent.backends", "${R2G_BACKEND_CONFIG}"],
     "timeout_seconds": 360,
     "artifacts": {"kind": "local", "path": "${R2G_RUN_ROOT}/backend"}
   }
