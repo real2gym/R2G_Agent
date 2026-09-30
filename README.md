@@ -1,6 +1,6 @@
 # Real2Gym Agent
 
-[Project](https://real2gym.github.io/) · [Real2Sim](https://github.com/real2gym/Real2Gym) · [Agent](https://github.com/real2gym/R2G_Agent) · [Paper](https://github.com/real2gym/Real2Gym/blob/main/paper/Real2Gym.pdf)
+[Project](https://real2gym.github.io/) · [Real2Sim](https://github.com/real2gym/Real2Gym) · [Agent](https://github.com/real2gym/R2G_Agent) · [Paper](https://arxiv.org/abs/2609.37089)
 
 A simulation agent that turns current visual observations into executable manipulation stages, checks the actual feedback, and continues in one task-scoped model session.
 
